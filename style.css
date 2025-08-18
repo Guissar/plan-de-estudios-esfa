@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.malla {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(6, 280px);
+    gap: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cuatrimestre {
+    width: 260px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.cuatrimestre h3 {
+    margin-top: 0;
+    color: #f4c542;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.curso {
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 5px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.curso:hover {
+    transform: scale(1.03);
+}
+
+.completado {
+    background-color: #4CAF50;
+}
+
+.bloqueado {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.pendiente {
+    background-color: #2196F3;
+}
