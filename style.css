@@ -61,13 +61,13 @@ h1 {
 }
 
 .curso.pendiente {
-  background-color: #fff4b3;
-  color: #333333;
+  background-color: #b6f7b6;
+  color: #1e4620;
 }
 
 .curso.completado {
-  background-color: #b6f7b6;
-  color: #1e4620;
+  background-color: #004d2a;
+  color: white;
 }
 
 .curso:hover {
