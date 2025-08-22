@@ -1,0 +1,1 @@
+// Este archivo debe contener tu estructura de cursos con códigos, nombres, estados y requisitos.
