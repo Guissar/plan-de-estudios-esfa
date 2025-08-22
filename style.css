@@ -20,6 +20,7 @@ h1 {
   white-space: nowrap;
   max-width: 100vw;
   padding: 1rem;
+  position: relative;
 }
 
 #fila-superior,
@@ -37,6 +38,7 @@ h1 {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .cuatrimestre h3 {
@@ -57,7 +59,7 @@ h1 {
 }
 
 .curso {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   background-color: #e0e0e0;
   margin-bottom: 6px;
   padding: 0.4rem;
@@ -65,10 +67,16 @@ h1 {
   text-align: center;
   font-weight: 500;
   line-height: 1.2;
-  transition: transform 0.2s, background-color 0.2s;
+
+  /* 🔒 Evitar que el texto se desborde */
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .curso.bloqueado {
@@ -101,10 +109,33 @@ h1 {
   cursor: pointer;
 }
 
-/* 📱 Móvil */
+/* 🌟 BONUS: Sombras laterales para indicar scroll en móvil */
+#contenedor-scroll::before,
+#contenedor-scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#contenedor-scroll::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0));
+}
+
+#contenedor-scroll::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0));
+}
+
+/* 📱 Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .cuatrimestre {
     min-width: 160px;
+    max-width: 180px;
   }
 
   .curso {
