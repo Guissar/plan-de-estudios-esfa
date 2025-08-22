@@ -33,9 +33,9 @@ function crearMalla() {
       divCurso.classList.add("curso", curso.estado);
       divCurso.textContent = `${curso.codigo} - ${curso.nombre}`;
       divCurso.title = curso.requisitos.length > 0 ? `Requiere: ${curso.requisitos.join(", ")}` : "Sin requisitos";
-      if (curso.estado === "pendiente") {
+      if (curso.estado === "pendiente" || curso.estado === "completado") {
         divCurso.onclick = () => {
-          curso.estado = "completado";
+          curso.estado = curso.estado === "pendiente" ? "completado" : "pendiente";
           actualizarEstados();
           crearMalla();
         };
