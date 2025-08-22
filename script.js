@@ -82,6 +82,6 @@ function crearMalla() {
 }
 
 // ⚡ Inicializar al cargar la página
-actualizarEstados();
 cargarProgresoGuardado();
+actualizarEstados();
 crearMalla();
