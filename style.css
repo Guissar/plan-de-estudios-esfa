@@ -57,11 +57,11 @@ h1 {
 
 .curso.bloqueado {
   background-color: #cccccc;
-  color: #555555;
+  color: #7d7d7d;
 }
 
 .curso.pendiente {
-  background-color: #51967a;
+  background-color: #a3d4b6;
   color: #1e4620;
 }
 
