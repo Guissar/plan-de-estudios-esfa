@@ -69,7 +69,8 @@ function crearMalla() {
         divCurso.onclick = () => {
           curso.estado = curso.estado === "pendiente" ? "completado" : "pendiente";
           actualizarEstados(); // actualiza dependientes
-          crearMalla();        // vuelve a renderizar
+          crearMalla();  // vuelve a renderizar
+          actualizarBarraProgreso();
         };
       }
 
@@ -85,3 +86,60 @@ function crearMalla() {
 cargarProgresoGuardado();
 actualizarEstados();
 crearMalla();
+cargarModoOscuro();
+crearControlesExtras();
+actualizarBarraProgreso();
+
+// 🌗 MODO OSCURO
+function aplicarModoOscuro() {
+  document.body.classList.toggle('modo-oscuro');
+
+  // Guardar preferencia
+  localStorage.setItem('modoOscuro', document.body.classList.contains('modo-oscuro'));
+}
+
+function cargarModoOscuro() {
+  const guardado = localStorage.getItem('modoOscuro');
+  if (guardado === 'true') {
+    document.body.classList.add('modo-oscuro');
+  }
+}
+
+// 🎓 BARRA DE PROGRESO
+function actualizarBarraProgreso() {
+  const barra = document.getElementById('barra-progreso');
+  const total = cursosPorCuatrimestre.flatMap(c => c.cursos).length;
+  const completados = cursosPorCuatrimestre.flatMap(c => c.cursos).filter(curso => curso.estado === 'completado').length;
+  const porcentaje = Math.round((completados / total) * 100);
+  barra.style.width = `${porcentaje}%`;
+  barra.textContent = `${porcentaje}% completado`;
+}
+
+// ☀️🌙 Botón de modo oscuro y progreso
+function crearControlesExtras() {
+  const btnModo = document.createElement('button');
+  btnModo.textContent = '🌙 Modo Oscuro';
+  btnModo.style.marginBottom = '1rem';
+  btnModo.onclick = () => {
+    aplicarModoOscuro();
+    btnModo.textContent = document.body.classList.contains('modo-oscuro') ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+  };
+
+  const contenedor = document.getElementById('contenedor-scroll');
+  contenedor.prepend(btnModo);
+
+  const barra = document.createElement('div');
+  barra.id = 'barra-progreso';
+  barra.style.height = '25px';
+  barra.style.backgroundColor = '#a3d4b6';
+  barra.style.borderRadius = '12px';
+  barra.style.textAlign = 'center';
+  barra.style.lineHeight = '25px';
+  barra.style.color = '#004d2a';
+  barra.style.fontWeight = 'bold';
+  barra.style.marginBottom = '20px';
+  barra.style.transition = 'width 0.4s ease';
+
+  contenedor.prepend(barra);
+}
+
