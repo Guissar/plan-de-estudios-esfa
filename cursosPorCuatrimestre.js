@@ -58,5 +58,18 @@ const cursosPorCuatrimestre = [
       { codigo: "UVMV064", nombre: "Análisis Clínico", estado: "bloqueado", requisitos: ["UVMV015", "UVMV051"] },
       { codigo: "UVMV065", nombre: "Seminario de Formación VI", estado: "bloqueado", requisitos: ["UVMV055"] }
     ]
+  },
+  {
+    nombre: "VII CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV071", nombre: "Farmacología y Terapéutica I", estado: "bloqueado", requisitos: ["UVMV015", "UVMV061", "UVMV063"] },
+      { codigo: "UVMV072", nombre: "Epizootiología II", estado: "bloqueado", requisitos: ["UVMV015", "UVMV062"] },
+      { codigo: "UVMV073", nombre: "Clínica Propedéutica de Animales de Compañía", estado: "bloqueado", requisitos: ["UVMV015", "UVMV064"] },
+      { codigo: "UVMV074", nombre: "Fisiología y Patología Reproductora de la Hembra", estado: "bloqueado", requisitos: ["UVMV015", "UVMV053", "UVMV064"] },
+      { codigo: "UVMV075", nombre: "Seminario de Formación VII", estado: "bloqueado", requisitos: ["UVMV065"] }
+    ]
+  },
+  {
+    
   }
 ];
