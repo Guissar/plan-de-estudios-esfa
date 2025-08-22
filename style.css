@@ -89,22 +89,6 @@ h1 {
   color: white;
 }
 
-@media (max-width: 768px) {
-  #fila-superior, #fila-inferior {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding: 1rem;
-    max-width: 100vw;
-    min-width: max-content;
-  }
-
-  .cuatrimestre {
-    display: inline-block;
-    vertical-align: top;
-  }
-}
-
 #contenedor-scroll {
   overflow-x: auto;
   overflow-y: hidden;
