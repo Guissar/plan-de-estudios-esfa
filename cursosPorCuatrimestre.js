@@ -72,7 +72,7 @@ const cursosPorCuatrimestre = [
   {
     nombre: "VIII CUATRIMESTRE",
   cursos: [
-    { codigo: "UVMV081", nombre: "Clínica Propedéutica Mamíferos de Granja", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV081", nombre: "Clínica Propedéutica de Mamíferos de Granja", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
     { codigo: "UVMV082", nombre: "Cirugía General", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
     { codigo: "UVMV083", nombre: "Fisiología y Patología Reproductora Macho", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
     { codigo: "UVMV084", nombre: "Obstetricia", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
