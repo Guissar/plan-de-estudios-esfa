@@ -75,8 +75,8 @@ h1 {
   cursor: pointer;
 }
 
-.cuatrimestre h3.titulo-azul {
-  background-color: #004080;
+h3.titulo-azul {
+  background-color: #004080 !important;
 }
 
 .curso.pendiente.azul {
