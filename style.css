@@ -74,3 +74,17 @@ h1 {
   transform: scale(1.04);
   cursor: pointer;
 }
+
+.titulo-azul {
+  background-color: #004080;
+}
+
+.curso.pendiente.azul {
+  background-color: #cce6ff;
+  color: #003366;
+}
+
+.curso.completado.azul {
+  background-color: #004080;
+  color: white;
+}
