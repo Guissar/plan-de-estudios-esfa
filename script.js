@@ -17,6 +17,7 @@ function actualizarEstados() {
     });
   });
 
+  // 🧠 Guardar automáticamente el estado después de actualizar
   localStorage.setItem("estadoCursos", JSON.stringify(cursosPorCuatrimestre));
 }
 
@@ -67,9 +68,8 @@ function crearMalla() {
       if (curso.estado === "pendiente" || curso.estado === "completado") {
         divCurso.onclick = () => {
           curso.estado = curso.estado === "pendiente" ? "completado" : "pendiente";
-          actualizarEstados();
-          crearMalla();
-          actualizarBarraProgreso();
+          actualizarEstados(); // actualiza dependientes
+          crearMalla();        // vuelve a renderizar
         };
       }
 
@@ -81,18 +81,7 @@ function crearMalla() {
   });
 }
 
-function actualizarBarraProgreso() {
-  const barra = document.getElementById('progreso-barra');
-  const texto = document.getElementById('progreso-texto');
-  const total = cursosPorCuatrimestre.flatMap(c => c.cursos).length;
-  const completados = cursosPorCuatrimestre.flatMap(c => c.cursos).filter(curso => curso.estado === 'completado').length;
-  const porcentaje = Math.round((completados / total) * 100);
-  
-  barra.style.width = `${porcentaje}%`;
-  texto.textContent = `${porcentaje}% completado`;
-}
-
+// ⚡ Inicializar al cargar la página
 cargarProgresoGuardado();
 actualizarEstados();
 crearMalla();
-actualizarBarraProgreso();
