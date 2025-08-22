@@ -133,26 +133,4 @@ h1 {
   h1 {
     font-size: 20px;
   }
-
-  /* ✨ Sombras para scroll en móvil */
-  #contenedor-scroll::before,
-  #contenedor-scroll::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  #contenedor-scroll::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0));
-  }
-
-  #contenedor-scroll::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0));
-  }
 }
