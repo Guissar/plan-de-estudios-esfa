@@ -7,6 +7,7 @@ function actualizarEstados() {
       }
     });
   });
+
   cursosPorCuatrimestre.forEach(cuatri => {
     cuatri.cursos.forEach(curso => {
       const cumpleReqs = !curso.requisitos || curso.requisitos.every(req => completados.has(req));
@@ -15,6 +16,21 @@ function actualizarEstados() {
       }
     });
   });
+
+  // 🧠 Guardar automáticamente el estado después de actualizar
+  localStorage.setItem("estadoCursos", JSON.stringify(cursosPorCuatrimestre));
+}
+
+function cargarProgresoGuardado() {
+  const datosGuardados = localStorage.getItem("estadoCursos");
+  if (datosGuardados) {
+    const estadoGuardado = JSON.parse(datosGuardados);
+    cursosPorCuatrimestre.forEach((cuatri, i) => {
+      cuatri.cursos.forEach((curso, j) => {
+        curso.estado = estadoGuardado[i]?.cursos[j]?.estado || "bloqueado";
+      });
+    });
+  }
 }
 
 function crearMalla() {
@@ -45,13 +61,15 @@ function crearMalla() {
       }
 
       divCurso.textContent = `${curso.codigo} - ${curso.nombre}`;
-      divCurso.title = curso.requisitos && curso.requisitos.length > 0 ? `Requiere: ${curso.requisitos.join(", ")}` : "Sin requisitos";
+      divCurso.title = curso.requisitos && curso.requisitos.length > 0
+        ? `Requiere: ${curso.requisitos.join(", ")}`
+        : "Sin requisitos";
 
       if (curso.estado === "pendiente" || curso.estado === "completado") {
         divCurso.onclick = () => {
           curso.estado = curso.estado === "pendiente" ? "completado" : "pendiente";
-          actualizarEstados();
-          crearMalla();
+          actualizarEstados(); // actualiza dependientes
+          crearMalla();        // vuelve a renderizar
         };
       }
 
@@ -63,5 +81,7 @@ function crearMalla() {
   });
 }
 
+// ⚡ Inicializar al cargar la página
 actualizarEstados();
+cargarProgresoGuardado();
 crearMalla();
