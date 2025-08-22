@@ -70,6 +70,44 @@ const cursosPorCuatrimestre = [
     ]
   },
   {
-    
-  }
+    nombre: "VIII CUATRIMESTRE",
+  cursos: [
+    { codigo: "UVMV081", nombre: "Clínica Propedéutica Mamíferos de Granja", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV082", nombre: "Cirugía General", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV083", nombre: "Fisiología y Patología Reproductora Macho", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV084", nombre: "Obstetricia", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV085", nombre: "Farmacología y Terapéutica II", estado: "bloqueado", requisitos: ["UVMV015", "UVMV071", "UVMV072", "UVMV073", "UVMV074"] },
+    { codigo: "UVMV086", nombre: "Seminario de Formación VIII", estado: "bloqueado", requisitos: ["UVMV075"] }
+  ]
+},
+{
+  nombre: "IX CUATRIMESTRE",
+  cursos: [
+    { codigo: "UVMV091", nombre: "Manejo Médico Integral Mamíferos de Granja", estado: "bloqueado", requisitos: ["UVMV081", "UVMV082", "UVMV083", "UVMV084", "UVMV085"] },
+    { codigo: "UVMV092", nombre: "Manejo Médico Integral Animales de Compañía", estado: "bloqueado", requisitos: ["UVMV081", "UVMV082", "UVMV083", "UVMV084", "UVMV085"] },
+    { codigo: "UVMV093", nombre: "Seminario de Formación IX", estado: "bloqueado", requisitos: ["UVMV086"] }
+  ]
+},
+{
+  nombre: "X CUATRIMESTRE",
+  cursos: [
+    { codigo: "UVMV101", nombre: "Práctica Médica Animales de Granja", estado: "bloqueado", requisitos: ["UVMV091", "UVMV092"] },
+    { codigo: "UVMV102", nombre: "Seminario de Formación X", estado: "bloqueado", requisitos: ["UVMV093"] }
+  ]
+},
+{
+  nombre: "XI CUATRIMESTRE",
+  cursos: [
+    { codigo: "UVMV111", nombre: "Práctica Médica en Animales de Compañía", estado: "bloqueado", requisitos: ["UVMV101"] },
+    { codigo: "UVMV112", nombre: "Práctica Medicina Veterinaria en la Industria Alimenticia", estado: "bloqueado", requisitos: ["UVMV101"] },
+    { codigo: "UVMV113", nombre: "Seminario de Formación XI", estado: "bloqueado", requisitos: ["UVMV102"] }
+  ]
+},
+{
+  nombre: "XII CUATRIMESTRE",
+  cursos: [
+    { codigo: "UVMV121", nombre: "Actividad Profesional Final", estado: "bloqueado", requisitos: ["UVMV111", "UVMV112"] },
+    { codigo: "UVMV122", nombre: "Seminario de Formación XII", estado: "bloqueado", requisitos: ["UVMV113"] }
+  ]
+}
 ];
