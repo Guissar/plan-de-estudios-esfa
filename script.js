@@ -1,82 +1,111 @@
 const cursosPorCuatrimestre = [
-    {
-        nombre: "I CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV011 - Zootecnia General I", estado: "pendiente" },
-            { nombre: "UVMV012 - Química Inorgánica Básica", estado: "pendiente" },
-            { nombre: "UVMV013 - Biología Celular y Molecular", estado: "pendiente" },
-            { nombre: "UVMV014 - Bioestadística", estado: "pendiente" },
-            { nombre: "UVMV015 - Seminario de Formación I", estado: "pendiente" }
-        ]
-    },
-    {
-        nombre: "II CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV021 - Zootecnia General II", estado: "pendiente" },
-            { nombre: "UVMV022 - Química Orgánica", estado: "pendiente" },
-            { nombre: "UVMV023 - Anatomía Topográfica I", estado: "pendiente" },
-            { nombre: "UVMV024 - Histología Veterinaria", estado: "pendiente" },
-            { nombre: "UVMV025 - Seminario de Formación II", estado: "pendiente" }
-        ]
-    },
-    {
-        nombre: "III CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV031 - Anatomía Topográfica y Comparada II", estado: "bloqueado" },
-            { nombre: "UVMV032 - Bioquímica", estado: "bloqueado" },
-            { nombre: "UVMV033 - Fisiología Animal General y Comparada I", estado: "bloqueado" },
-            { nombre: "UVMV034 - Nutrición Animal", estado: "bloqueado" },
-            { nombre: "UVMV035 - Seminario de Formación III", estado: "bloqueado" }
-        ]
-    },
-    {
-        nombre: "IV CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV041 - Patología General I", estado: "bloqueado" },
-            { nombre: "UVMV042 - Fisiología Animal", estado: "bloqueado" }
-        ]
-    },
-    {
-        nombre: "V CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV051 - Patología Especial", estado: "bloqueado" },
-            { nombre: "UVMV052 - Enfermedades", estado: "bloqueado" }
-        ]
-    },
-    {
-        nombre: "VI CUATRIMESTRE",
-        cursos: [
-            { nombre: "UVMV061 - Enfermedades de las Aves", estado: "completado" }
-        ]
-    }
+  {
+    nombre: "I CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV011", nombre: "Introducción a la Medicina Veterinaria", estado: "pendiente" },
+      { codigo: "UVMV012", nombre: "Biología General", estado: "pendiente" },
+      { codigo: "UVMV013", nombre: "Química General", estado: "pendiente" },
+      { codigo: "UVMV014", nombre: "Matemática", estado: "pendiente" },
+      { codigo: "UVMV015", nombre: "Seminario de Formación I", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "II CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV021", nombre: "Anatomía Topográfica y Comparada I", estado: "pendiente" },
+      { codigo: "UVMV022", nombre: "Física General", estado: "pendiente" },
+      { codigo: "UVMV023", nombre: "Microbiología", estado: "pendiente" },
+      { codigo: "UVMV024", nombre: "Química Orgánica", estado: "pendiente" },
+      { codigo: "UVMV025", nombre: "Seminario de Formación II", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "III CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV031", nombre: "Anatomía Topográfica y Comparada II", estado: "pendiente" },
+      { codigo: "UVMV032", nombre: "Bioquímica", estado: "pendiente" },
+      { codigo: "UVMV033", nombre: "Fisiología Animal General y Comparada I", estado: "pendiente" },
+      { codigo: "UVMV034", nombre: "Nutrición Animal", estado: "pendiente" },
+      { codigo: "UVMV035", nombre: "Seminario de Formación III", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "IV CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV041", nombre: "Patología General I", estado: "pendiente" },
+      { codigo: "UVMV042", nombre: "Fisiología Animal", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "V CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV051", nombre: "Patología Especial", estado: "pendiente" },
+      { codigo: "UVMV052", nombre: "Enfermedades Parasitarias", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "VI CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV061", nombre: "Enfermedades de las Aves", estado: "completado" }
+    ]
+  },
+  {
+    nombre: "VII CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV071", nombre: "Enfermedades de los Bovinos", estado: "pendiente" }
+    ]
+  },
+  {
+    nombre: "VIII CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV081", nombre: "Enfermedades de los Animales de Compañía", estado: "bloqueado" }
+    ]
+  },
+  {
+    nombre: "IX CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV091", nombre: "Cirugía General", estado: "bloqueado" }
+    ]
+  },
+  {
+    nombre: "X CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV101", nombre: "Farmacología Veterinaria", estado: "bloqueado" }
+    ]
+  },
+  {
+    nombre: "XI CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV111", nombre: "Toxicología Veterinaria", estado: "bloqueado" }
+    ]
+  },
+  {
+    nombre: "XII CUATRIMESTRE",
+    cursos: [
+      { codigo: "UVMV121", nombre: "Internado Rotatorio", estado: "bloqueado" }
+    ]
+  }
 ];
 
-function crearCuatrimestre(cuatrimestre) {
-    const contenedor = document.createElement("div");
-    contenedor.className = "cuatrimestre";
+function crearMalla() {
+  cursosPorCuatrimestre.forEach((cuatri, index) => {
+    const columna = document.createElement("div");
+    columna.classList.add("cuatrimestre");
 
     const titulo = document.createElement("h3");
-    titulo.textContent = cuatrimestre.nombre;
-    contenedor.appendChild(titulo);
+    titulo.textContent = cuatri.nombre;
+    columna.appendChild(titulo);
 
-    cuatrimestre.cursos.forEach(curso => {
-        const divCurso = document.createElement("div");
-        divCurso.className = `curso ${curso.estado}`;
-        divCurso.textContent = curso.nombre;
-        contenedor.appendChild(divCurso);
+    cuatri.cursos.forEach(curso => {
+      const divCurso = document.createElement("div");
+      divCurso.classList.add("curso", curso.estado);
+      divCurso.textContent = `${curso.codigo} - ${curso.nombre}`;
+      columna.appendChild(divCurso);
     });
 
-    return contenedor;
+    const fila = index < 6 ? document.getElementById("fila-superior") : document.getElementById("fila-inferior");
+    fila.appendChild(columna);
+  });
 }
 
-const filaSuperior = document.getElementById("fila-superior");
-const filaInferior = document.getElementById("fila-inferior");
-
-cursosPorCuatrimestre.forEach((cuatrimestre, index) => {
-    const elemento = crearCuatrimestre(cuatrimestre);
-    if (index < 6) {
-        filaSuperior.appendChild(elemento);
-    } else {
-        filaInferior.appendChild(elemento);
-    }
-});
+crearMalla();
