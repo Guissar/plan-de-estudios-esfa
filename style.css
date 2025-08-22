@@ -104,3 +104,26 @@ h1 {
     vertical-align: top;
   }
 }
+
+#contenedor-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 100vw;
+  min-width: max-content;
+  padding: 1rem;
+}
+
+#fila-superior,
+#fila-inferior {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.curso {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 0.9rem;
+  padding: 0.4rem;
+}
