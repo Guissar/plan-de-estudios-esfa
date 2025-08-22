@@ -27,9 +27,7 @@ function crearMalla() {
     const columna = document.createElement("div");
     columna.classList.add("cuatrimestre");
 
-    // Detectar si es del cuatrimestre 8 en adelante
-    const numeroCuatrimestre = parseInt(cuatri.nombre.split(" ")[0]);
-    const esAzul = numeroCuatrimestre >= 8;
+    const esAzul = index >= 7;
 
     const titulo = document.createElement("h3");
     titulo.textContent = cuatri.nombre;
@@ -42,7 +40,6 @@ function crearMalla() {
       const divCurso = document.createElement("div");
       divCurso.classList.add("curso", curso.estado);
 
-      // Si el cuatrimestre es azul, agregamos la clase
       if (esAzul) {
         divCurso.classList.add("azul");
       }
