@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+}
+h1 {
+  color: #006d38;
+}
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.cuatrimestre {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eee;
+  width: 250px;
+}
+.curso {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.curso.bloqueado {
+  background-color: #b0b0b0;
+  color: white;
+  cursor: not-allowed;
+}
+.curso.pendiente {
+  background-color: #bbf0bb;
+}
+.curso.completado {
+  background-color: #00964e;
+  color: white;
+}
